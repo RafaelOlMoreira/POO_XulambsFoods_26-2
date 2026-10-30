@@ -15,6 +15,31 @@ namespace XulambsFoods {
             };
         }
 
+        public static double Valor(this ESobremesa sobremesa)
+        {
+            return sobremesa switch
+            {
+                ESobremesa.BrigadeiroColher => 8,
+                ESobremesa.Pudim => 10,
+                ESobremesa.DoceDeLeite => 9,
+                _ => 0
+            };
+        }
+
+        public static double Valor(this EBebida bebida)
+        {
+            return bebida switch
+            {
+                EBebida.AguaCasa => 0,
+                EBebida.AguaComGas => 4,
+                EBebida.ChaComGas => 6,
+                EBebida.Sucos => 9,
+                EBebida.Cervejas => 15,
+                EBebida.Vinho => 18,
+                _ => 0
+            };
+        }
+
         public static ETaxaEntrega DefinirEntrega(this double distancia)
         {
             return distancia switch
